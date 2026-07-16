@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>News Flash — Farooq Ali</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20role%3D%22img%22%20aria-label%3D%22News%20Flash%22%3E%0A%20%20%3Ctitle%3ENews%20Flash%3C%2Ftitle%3E%0A%20%20%3C%21--%20Canonical%20News%20Flash%20mark%3A%20a%20gold%20bolt%20that%20pulses%20on%20the%20same%202.4s%20beat%20as%20the%20slide%27s%0A%20%20%20%20%20%20%20.bolt%20%28boltPulse%20in%20src%2Fslide.html%29%2C%20so%20the%20icon%20and%20the%20product%20share%20a%20rhythm.%0A%20%20%20%20%20%20%20Self-contained%20%28styles%20inline%2C%20no%20external%20refs%29%20so%20it%20can%20be%20inlined%20anywhere%3A%20this%20repo%0A%20%20%20%20%20%20%20inlines%20it%20as%20the%20pages%27%20favicon%2C%20and%20the%20ctf.guru%20hub%20card%20inlines%20the%20same%20shape.%0A%20%20%20%20%20%20%20Colour%20is%20fixed%20to%20the%20brand%20gold%20%28--gold%20%23E9BF35%29%20rather%20than%20currentColor%20so%20it%20reads%20the%0A%20%20%20%20%20%20%20same%20standalone%20%28favicon%29%20and%20embedded.%20Freezes%20for%20reduced-motion%2C%20like%20the%20posters%20do.%20--%3E%0A%20%20%3Cstyle%3E%0A%20%20%20%20.nf-bolt%7B%0A%20%20%20%20%20%20fill%3Anone%3B%20stroke%3A%23E9BF35%3B%20stroke-width%3A2%3B%20stroke-linecap%3Around%3B%20stroke-linejoin%3Around%3B%0A%20%20%20%20%20%20transform-origin%3A12px%2012px%3B%20animation%3Anf-pulse%202.4s%20ease-in-out%20infinite%3B%0A%20%20%20%20%7D%0A%20%20%20%20%40keyframes%20nf-pulse%7B%0A%20%20%20%20%20%200%25%2C100%25%7B%20opacity%3A1%3B%20%20%20transform%3Ascale%281%29%20%7D%0A%20%20%20%20%20%2050%25%20%20%20%20%7B%20opacity%3A.62%3B%20transform%3Ascale%281.14%29%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20%40media%28prefers-reduced-motion%3Areduce%29%7B%20.nf-bolt%7B%20animation%3Anone%20%7D%20%7D%0A%20%20%3C%2Fstyle%3E%0A%20%20%3Cpolygon%20class%3D%22nf-bolt%22%20points%3D%2213%202%203%2014%2012%2014%2011%2022%2021%2010%2012%2010%2013%202%22%2F%3E%0A%3C%2Fsvg%3E%0A">
+<style>
+/* CTF chrome, mirroring ctf.guru's own hub (infographics-builder/hub/index.html): theme scoped to
+   .wrap, light DARKENS the accents for contrast, top-right LinkedIn + theme pills, beacon shield.
+   NOTE: CTF is Farooq's personal brand and deliberately differs from the AIISV poster brand — the
+   beacon glow lives here on purpose (BRAND.md's "no neon glow" governs the posters, not this). */
+.wrap{
+  --bg:#0b0b0b; --panel:#141414; --panel2:#0f0f10; --line:#262626; --hover:#17181a;
+  --ink:#f5f5f5; --muted:#bdbdbd; --dim:#8c8c8c;
+  --gold:#E9BF35; --blue:#5AA9EC; --teal:#3AD0B0; --orange:#FE9A3A; --green:#81BB42; --red:#FF5A4D; --purple:#9B5DE5;
+  --shadow:rgba(0,0,0,.55);
+  --font:'Century Gothic','Futura','Avenir Next',system-ui,sans-serif;
+}
+.wrap.light{
+  --bg:#f6f5f2; --panel:#ffffff; --panel2:#efeeea; --line:#e3e2dc; --hover:#f0efe9;
+  --ink:#1a1a17; --muted:#57564f; --dim:#86857c;
+  --gold:#b4890b; --blue:#2f7fc7; --teal:#128a70; --orange:#c96a00; --green:#5a8a1f; --red:#c8342a; --purple:#6b3fc0;
+  --shadow:rgba(20,20,20,.16);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#0b0b0b}
+.wrap{background:var(--bg);color:var(--ink);font-family:var(--font);min-height:100vh;padding:0 22px;
+  transition:background .2s ease,color .2s ease}
+.inner{max-width:960px;margin:0 auto;padding:58px 0 40px}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+/* top-right pills — LinkedIn + theme, exactly as ctf.guru places them */
+.themebtn{position:fixed;top:16px;right:16px;z-index:30;width:38px;height:38px;border-radius:999px;
+  background:var(--panel);border:1px solid var(--line);color:var(--muted);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:color .15s ease,border-color .15s ease}
+.themebtn:hover{color:var(--gold);border-color:var(--gold)}
+.themebtn svg{width:18px;height:18px}
+.themebtn .moon{display:none}
+.wrap.light .themebtn .sun{display:none}
+.wrap.light .themebtn .moon{display:block}
+.lnbtn{position:fixed;top:16px;right:62px;z-index:30;width:38px;height:38px;border-radius:999px;
+  background:var(--panel);border:1px solid var(--line);color:var(--muted);text-decoration:none;
+  display:flex;align-items:center;justify-content:center;transition:color .15s ease,border-color .15s ease}
+.lnbtn:hover{color:var(--gold);border-color:var(--gold)}
+.lnbtn svg{width:18px;height:18px;display:block}
+/* back to ctf.guru — top-left */
+.backbtn{position:fixed;top:16px;left:16px;z-index:30;height:38px;padding:0 14px;border-radius:999px;
+  background:var(--panel);border:1px solid var(--line);color:var(--muted);text-decoration:none;font-weight:700;
+  font-size:.8rem;display:inline-flex;align-items:center;gap:6px;transition:color .15s ease,border-color .15s ease}
+.backbtn:hover{color:var(--gold);border-color:var(--gold)}
+
+/* masthead — the bolt beacons and "Flash" shines, same beats as the slide */
+.hero{display:flex;align-items:center;gap:20px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+/* beacon glows BLUE — the same rgba(90,169,236) ctf.guru's own shield beacons with. Not gold. */
+.hero .mark{width:64px;height:64px;flex:none;animation:beacon 2.6s ease-in-out infinite;transform-origin:center}
+@keyframes beacon{0%,100%{transform:scale(1);filter:drop-shadow(0 0 5px rgba(90,169,236,.30))}
+  50%{transform:scale(1.07);filter:drop-shadow(0 0 22px rgba(90,169,236,.62))}}
+h1{margin:5px 0 0;font-size:2.4rem;font-weight:800;letter-spacing:.01em;color:var(--ink);line-height:1.05}
+/* FLASH is FIRE, not gold — matches the slide's own red->orange sweep. */
+h1 .fl,.card h2 .fl{background:linear-gradient(100deg,#FF5A4D 0%,#FE9A3A 24%,#fff3c4 45%,#ffffff 50%,#fff3c4 55%,#FE9A3A 76%,#FF5A4D 100%);
+  background-size:260% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shine 2.1s linear infinite}
+@keyframes shine{0%{background-position:0% center}100%{background-position:260% center}}
+.role{margin:5px 0 0;color:var(--dim);font-size:.95rem;font-weight:600;letter-spacing:.02em}
+
+/* cards — the topic's own hero animation is the backdrop */
+.cards{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));margin-top:30px}
+.card{position:relative;overflow:hidden;display:block;text-decoration:none;color:var(--ink);
+  border:1px solid var(--line);border-radius:20px;min-height:210px;background:var(--panel);
+  box-shadow:0 18px 44px var(--shadow);transition:border-color .15s ease,transform .15s ease}
+.card:hover{border-color:var(--ac);transform:translateY(-2px)}
+.card .eyebrow{color:var(--ac)}
+.cardbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;z-index:0;opacity:.55}
+.cardveil{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(100deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 88%,transparent) 46%,color-mix(in srgb,var(--bg) 18%,transparent) 100%)}
+.cardbody{position:relative;z-index:2;display:block;padding:22px}
+.card h2{margin:6px 0 8px;font-size:1.45rem;font-weight:800;color:var(--ink)}
+.card .meta{display:block;color:var(--muted);font-size:.86rem;margin-bottom:4px}
+.card .meta b{color:var(--ac)}
+.card .cov{display:block;color:var(--dim);font-size:.78rem}
+
+footer{margin-top:40px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line);padding-top:18px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.fb{display:inline-flex;align-items:center;gap:10px;color:var(--ink);font-weight:700}
+.fb .fs{width:28px;height:28px;flex:none}
+.fb .tag{color:var(--dim);font-weight:600;font-size:12px;letter-spacing:.02em}
+.fright{display:inline-flex;align-items:center;gap:12px}
+.fright .social{display:inline-flex;color:var(--muted)}.fright .social svg{width:18px;height:18px}
+.fright .social:hover{color:var(--gold)}
+.fright .home{font-weight:700;color:var(--blue);text-decoration:none}
+@media(prefers-reduced-motion:reduce){.hero .mark,h1 .fl,.cardbg{animation:none}}
+</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <!-- Farooq Ali / CTF shield — ported from infographics-builder engine/brands/farooq-ali.css.
+       Authored for the newsflash logo viewBox (600x542); drawn via <use href="#lg">.
+       shield gradient steel->navy, rim brand-blue #5AA9EC, white "CTF". -->
+  <linearGradient id="ctfsg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b5168"/><stop offset="1" stop-color="#1a2530"/></linearGradient>
+  <g id="lg"><g transform="translate(60,11) scale(10)">
+    <path d="M7 5 H41 Q43 5 43 7 V27 Q43 40 24 48 Q5 40 5 27 V7 Q5 5 7 5 Z" fill="url(#ctfsg)" stroke="#5AA9EC" stroke-width="2"/>
+    <text x="24" y="32" text-anchor="middle" font-family="'Century Gothic', Futura, sans-serif" font-size="16" font-weight="800" letter-spacing="0.5" fill="#ffffff">CTF</text>
+  </g></g>
+</defs></svg>
+
+<div class="wrap" id="wrap">
+  <a class="backbtn" href="https://ctf.guru">&larr; ctf.guru</a>
+  <a class="lnbtn" href="https://www.linkedin.com/in/farooqali/" target="_blank" rel="noopener" aria-label="Farooq Ali on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5.001zM3.2 8.98h3.56V21H3.2zM9.02 8.98h3.41v1.64h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46V21h-3.56v-5.02c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.3-1.93 2.65V21H9.02z"/></svg></a>
+  <button class="themebtn" id="theme" type="button" aria-label="Toggle light or dark theme">
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+  </button>
+  <div class="inner">
+    <div class="hero">
+      <span class="mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="News Flash">
+  <title>News Flash</title>
+  <!-- Canonical News Flash mark: a gold bolt that pulses on the same 2.4s beat as the slide's
+       .bolt (boltPulse in src/slide.html), so the icon and the product share a rhythm.
+       Self-contained (styles inline, no external refs) so it can be inlined anywhere: this repo
+       inlines it as the pages' favicon, and the ctf.guru hub card inlines the same shape.
+       Colour is fixed to the brand gold (--gold #E9BF35) rather than currentColor so it reads the
+       same standalone (favicon) and embedded. Freezes for reduced-motion, like the posters do. -->
+  <style>
+    .nf-bolt{
+      fill:none; stroke:#E9BF35; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
+      transform-origin:12px 12px; animation:nf-pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes nf-pulse{
+      0%,100%{ opacity:1;   transform:scale(1) }
+      50%    { opacity:.62; transform:scale(1.14) }
+    }
+    @media(prefers-reduced-motion:reduce){ .nf-bolt{ animation:none } }
+  </style>
+  <polygon class="nf-bolt" points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+</svg>
+</span>
+      <div>
+        <div class="eyebrow">ctf.guru / newsflash</div>
+        <h1>News <span class="fl">Flash</span></h1>
+        <p class="role">Chief Troublemaker &amp; Fixer (CTF)</p>
+      </div>
+    </div>
+    <div class="cards"><a class="card" href="ai/" style="--ac:#5AA9EC"><video class="cardbg" autoplay muted loop playsinline poster="ai/Newsflash-AI-hero-anime.png"><source src="ai/Newsflash-AI-hero-anime.mp4" type="video/mp4"></video><span class="cardveil"></span><span class="cardbody"><span class="eyebrow">1 edition</span><h2>AI News <span class="fl">Flash</span></h2><span class="meta">Latest <b>Jul 16, 2026</b></span><span class="cov">June 16 – July 16, 2026</span></span></a><a class="card" href="security/" style="--ac:#3AD0B0"><video class="cardbg" autoplay muted loop playsinline poster="security/Newsflash-Security-hero-anime.png"><source src="security/Newsflash-Security-hero-anime.mp4" type="video/mp4"></video><span class="cardveil"></span><span class="cardbody"><span class="eyebrow">1 edition</span><h2>Security News <span class="fl">Flash</span></h2><span class="meta">Latest <b>Jul 16, 2026</b></span><span class="cov">June 16 – July 16, 2026</span></span></a></div>
+    <footer class="foot">
+      <span class="fb"><svg class="fs" viewBox="0 0 600 542" aria-hidden="true"><use href="#lg"></use></svg>Farooq Ali <span class="tag">&mdash; Chief Troublemaker &amp; Fixer (CTF)</span></span>
+      <span class="fright"><a class="social" href="https://www.linkedin.com/in/farooqali/" target="_blank" rel="noopener" aria-label="Farooq Ali on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5.001zM3.2 8.98h3.56V21H3.2zM9.02 8.98h3.41v1.64h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46V21h-3.56v-5.02c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.3-1.93 2.65V21H9.02z"/></svg></a><a class="home" href="https://ctf.guru">ctf.guru</a></span>
+    </footer>
+  </div>
+</div>
+<script>
+(function(){
+  var wrap=document.getElementById('wrap');
+  // same key ctf.guru uses, same origin -> a viewer's light/dark choice carries across the whole site
+  if(localStorage.getItem('ctf-theme')==='light') wrap.classList.add('light');
+  document.getElementById('theme').addEventListener('click',function(){
+    wrap.classList.toggle('light');
+    localStorage.setItem('ctf-theme', wrap.classList.contains('light')?'light':'dark');
+  });
+})();
+</script></body></html>
