@@ -49,6 +49,12 @@ html,body{margin:0;padding:0;background:#0b0b0b}
 
 /* masthead — the bolt beacons and "Flash" shines, same beats as the slide */
 .hero{display:flex;align-items:center;gap:20px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+/* The CTF shield LEADS, left, before the product bolt — same order as the slide masthead and
+   ctf.guru's own hub. It is ALWAYS a way home: the mark links out to the brand's site. */
+.homelink{flex:none;display:block;line-height:0;border-radius:10px;transition:opacity .18s,transform .18s}
+.homelink:hover{opacity:.82;transform:translateY(-1px)}
+.homelink:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.hero .shield{width:56px;height:56px;display:block}
 /* beacon glows BLUE — the same rgba(90,169,236) ctf.guru's own shield beacons with. Not gold. */
 .hero .mark{width:64px;height:64px;flex:none;animation:beacon 2.6s ease-in-out infinite;transform-origin:center}
 @keyframes beacon{0%,100%{transform:scale(1);filter:drop-shadow(0 0 5px rgba(90,169,236,.30))}
@@ -107,6 +113,7 @@ footer{margin-top:40px;color:var(--muted);font-size:.82rem;border-top:1px solid 
   </button>
   <div class="inner">
     <div class="hero">
+      <a class="homelink" href="https://ctf.guru" aria-label="Farooq Ali &mdash; ctf.guru"><svg class="shield" viewBox="0 0 600 542" aria-hidden="true"><use href="#lg"></use></svg></a>
       <span class="mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="News Flash">
   <title>News Flash</title>
   <!-- Canonical News Flash mark: a gold bolt that pulses on the same 2.4s beat as the slide's
@@ -137,7 +144,7 @@ footer{margin-top:40px;color:var(--muted);font-size:.82rem;border-top:1px solid 
     </div>
     <div class="cards"><a class="card" href="ai/" style="--ac:#5AA9EC"><video class="cardbg" autoplay muted loop playsinline poster="ai/Newsflash-AI-hero-anime.png"><source src="ai/Newsflash-AI-hero-anime.mp4" type="video/mp4"></video><span class="cardveil"></span><span class="cardbody"><span class="eyebrow">1 edition</span><h2>AI News <span class="fl">Flash</span></h2><span class="meta">Latest <b>Jul 16, 2026</b></span><span class="cov">June 16 – July 16, 2026</span></span></a><a class="card" href="security/" style="--ac:#3AD0B0"><video class="cardbg" autoplay muted loop playsinline poster="security/Newsflash-Security-hero-anime.png"><source src="security/Newsflash-Security-hero-anime.mp4" type="video/mp4"></video><span class="cardveil"></span><span class="cardbody"><span class="eyebrow">1 edition</span><h2>Security News <span class="fl">Flash</span></h2><span class="meta">Latest <b>Jul 16, 2026</b></span><span class="cov">June 16 – July 16, 2026</span></span></a></div>
     <footer class="foot">
-      <span class="fb"><svg class="fs" viewBox="0 0 600 542" aria-hidden="true"><use href="#lg"></use></svg>Farooq Ali <span class="tag">&mdash; Chief Troublemaker &amp; Fixer (CTF)</span></span>
+      <span class="fb"><a class="homelink" href="https://ctf.guru" aria-label="Farooq Ali &mdash; ctf.guru"><svg class="fs" viewBox="0 0 600 542" aria-hidden="true"><use href="#lg"></use></svg></a>Farooq Ali <span class="tag">&mdash; Chief Troublemaker &amp; Fixer (CTF)</span></span>
       <span class="fright"><a class="social" href="https://www.linkedin.com/in/farooqali/" target="_blank" rel="noopener" aria-label="Farooq Ali on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5.001zM3.2 8.98h3.56V21H3.2zM9.02 8.98h3.41v1.64h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46V21h-3.56v-5.02c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.3-1.93 2.65V21H9.02z"/></svg></a><a class="home" href="https://ctf.guru">ctf.guru</a></span>
     </footer>
   </div>
