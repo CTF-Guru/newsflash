@@ -11,6 +11,7 @@
   --bg:#0b0b0b; --panel:#141414; --panel2:#0f0f10; --line:#262626; --hover:#17181a;
   --ink:#f5f5f5; --muted:#bdbdbd; --dim:#8c8c8c;
   --gold:#E9BF35; --blue:#5AA9EC; --teal:#3AD0B0; --orange:#FE9A3A; --green:#81BB42; --red:#FF5A4D; --purple:#9B5DE5;
+  --flash-hi:#fff3c4; --flash-peak:#ffffff;   /* the "Flash" sweep peaks bright on black */
   --shadow:rgba(0,0,0,.55);
   --font:'Century Gothic','Futura','Avenir Next',system-ui,sans-serif;
 }
@@ -18,6 +19,7 @@
   --bg:#f6f5f2; --panel:#ffffff; --panel2:#efeeea; --line:#e3e2dc; --hover:#f0efe9;
   --ink:#1a1a17; --muted:#57564f; --dim:#86857c;
   --gold:#b4890b; --blue:#2f7fc7; --teal:#128a70; --orange:#c96a00; --green:#5a8a1f; --red:#c8342a; --purple:#6b3fc0;
+  --flash-hi:#b4890b; --flash-peak:#7a4f05;   /* on a WHITE panel the sweep must peak DARK, or "Flash" vanishes */
   --shadow:rgba(20,20,20,.16);
 }
 *{box-sizing:border-box}
@@ -60,8 +62,10 @@ html,body{margin:0;padding:0;background:#0b0b0b}
 @keyframes beacon{0%,100%{transform:scale(1);filter:drop-shadow(0 0 5px rgba(90,169,236,.30))}
   50%{transform:scale(1.07);filter:drop-shadow(0 0 22px rgba(90,169,236,.62))}}
 h1{margin:5px 0 0;font-size:2.4rem;font-weight:800;letter-spacing:.01em;color:var(--ink);line-height:1.05}
-/* FLASH is FIRE, not gold — matches the slide's own red->orange sweep. */
-h1 .fl,.card h2 .fl{background:linear-gradient(100deg,#FF5A4D 0%,#FE9A3A 24%,#fff3c4 45%,#ffffff 50%,#fff3c4 55%,#FE9A3A 76%,#FF5A4D 100%);
+/* FLASH is FIRE, not gold — matches the slide's own red->orange sweep. Built from theme tokens,
+   NOT hard-coded hexes: light mode's --panel is pure white, so a #ffffff peak makes "Flash"
+   invisible at the top of every cycle. --flash-hi/--flash-peak flip per theme (light peaks DARK). */
+h1 .fl,.card h2 .fl{background:linear-gradient(100deg,var(--red) 0%,var(--orange) 24%,var(--flash-hi) 45%,var(--flash-peak) 50%,var(--flash-hi) 55%,var(--orange) 76%,var(--red) 100%);
   background-size:260% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
   animation:shine 2.1s linear infinite}
 @keyframes shine{0%{background-position:0% center}100%{background-position:260% center}}
