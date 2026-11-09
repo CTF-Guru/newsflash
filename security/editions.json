@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-11-09",
+    "label": "Nov 9, 2026",
+    "url": "2026-11-09/",
+    "reviewed": "Nov 9, 2026",
+    "coverage": "October 26 - November 9, 2026"
+  },
+  {
     "date": "2026-11-02",
     "label": "Nov 2, 2026",
     "url": "2026-11-02/",
@@ -75,12 +82,5 @@
     "url": "2026-08-24/",
     "reviewed": "Aug 24, 2026",
     "coverage": "August 10 - August 24, 2026"
-  },
-  {
-    "date": "2026-08-17",
-    "label": "Aug 17, 2026",
-    "url": "2026-08-17/",
-    "reviewed": "Aug 17, 2026",
-    "coverage": "August 3 - August 17, 2026"
   }
 ]
